@@ -4,7 +4,7 @@ const todoList = document.getElementById('todoList');
 
 let editTodo = null;
 
-// Function to add todo
+// add todo
 const addTodo = () => {
     const inputText = inputBox.value.trim();
     if (inputText.length <= 0) {
@@ -13,7 +13,7 @@ const addTodo = () => {
     }
 
     if (addBtn.value === "Edit") {
-        // Passing the original text to editLocalTodos function before editing it in the todoList
+        // giving the original text to editLocalTodos before editing
         editLocalTodos(editTodo.target.closest('li').querySelector('p').innerHTML);
         editTodo.target.closest('li').querySelector('p').innerHTML = inputText;
         addBtn.value = "Add";
@@ -25,13 +25,13 @@ const addTodo = () => {
         p.innerHTML = inputText;
         li.appendChild(p);
 
-        // Creating Delete Icon (Trash can)
+        // Creating Delete Icon
         const deleteBtn = document.createElement("button");
         deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteBtn.classList.add("btn", "deleteBtn");
         li.appendChild(deleteBtn);
 
-        // Creating Edit Icon (Pencil)
+        // Creating Edit Icon
         const editBtn = document.createElement("button");
         editBtn.innerHTML = '<i class="fa-solid fa-pencil"></i>';
         editBtn.classList.add("btn", "editBtn");
@@ -44,11 +44,11 @@ const addTodo = () => {
     }
 }
 
-// Function to update : (Edit/Delete) todo
+// Function to update todo
 const updateTodo = (e) => {
     const targetBtn = e.target.closest('button'); // Always get the button, even if icon was clicked
 
-    if (!targetBtn) return; // If somehow it's not a button, exit early
+    if (!targetBtn) return;  
     const li = targetBtn.parentElement;
 
     if (targetBtn.classList.contains('deleteBtn')) {
