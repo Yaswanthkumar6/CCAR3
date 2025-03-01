@@ -19,19 +19,19 @@ const addTodo = () => {
         addBtn.value = "Add";
         inputBox.value = "";
     } else {
-        // Creating li and p tag
+        // li and p tag
         const li = document.createElement("li");
         const p = document.createElement("p");
         p.innerHTML = inputText;
         li.appendChild(p);
 
-        // Creating Delete Icon
+        // Delete Icon
         const deleteBtn = document.createElement("button");
         deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteBtn.classList.add("btn", "deleteBtn");
         li.appendChild(deleteBtn);
 
-        // Creating Edit Icon
+        // Edit Icon
         const editBtn = document.createElement("button");
         editBtn.innerHTML = '<i class="fa-solid fa-pencil"></i>';
         editBtn.classList.add("btn", "editBtn");
@@ -46,7 +46,7 @@ const addTodo = () => {
 
 // Function to update todo
 const updateTodo = (e) => {
-    const targetBtn = e.target.closest('button'); // Always get the button, even if icon was clicked
+    const targetBtn = e.target.closest('button');  
 
     if (!targetBtn) return;  
     const li = targetBtn.parentElement;
