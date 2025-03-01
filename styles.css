@@ -74,15 +74,18 @@ ul li{
     align-items: center;
     justify-content: space-between;
     transition: background-color 0.5s;
+    max-height:max-content;
 }
 
 ul li:hover{
-    background-color: #cbcaca;
+    background-color: rgb(162,162,162);
 }
 
 ul li p{
     flex-grow: 1;
     padding: 2px;
+    display:block;
+    max-width: 360px;
 }
 .btn{
     border: none;
